@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div >
+    <span th:text="${value}"></span>
+    <span th:text="${colors}"></span>
+    <th th:each="color : ${colors}" th:text="${colors}"></th>
+    <!--输入框-->
+    <input type="text" name="userName" value="James Carrot"  />
+    <!--##遍历List-->
+    <option th:each="color,colorStat:${colors}"  th:text="${color}"></option>
+    <!--遍历map-->
+    <th th:each="map : ${map}" th:text="${map.key}"></th>
+    <th th:each="map : ${map}" th:text="${map.value}"></th>
+    <!--User类-->
+    <span >User:</span>
+    <span th:text="${user.name}"></span>
+    <span th:text="${user.description}"></span>
+    <span th:text="${user.getDescription()}"></span>\
+    <!--给变量赋值-->
+
+    <div th:with="title=${'this is'}">
+        <span th:text="${title}"></span>
+    </div>
+
+    <!--引入头文件-->
+    <span th:include="header.html"></span>
+
+    <!--<span th:parse="header.html"></span>-->
+</div>
+</body>
+</html>
